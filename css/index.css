@@ -1,0 +1,382 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
+  font: 14px "微软雅黑";
+}
+a {
+  text-decoration: none;
+  display: block;
+}
+li {
+  list-style: none;
+}
+img {
+  display: block;
+}
+.subHead {
+  display: none;
+}
+#wrap {
+  width: 100%;
+  height: 100%;
+}
+#wrap #header {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  background: black;
+  opacity: .7;
+}
+#wrap #header .left_header {
+  width: 980px;
+  height: 60px;
+  margin: auto;
+}
+#wrap #header .left_header .logo {
+  float: left;
+  margin: 16px 20px 0 0;
+}
+#wrap #header .left_header .nav {
+  float: right;
+}
+#wrap #header .left_header .nav li {
+  width: 90px;
+  height: 60px;
+  float: left;
+  text-align: center;
+  line-height: 60px;
+}
+#wrap #header .left_header .nav li a {
+  color: white;
+}
+#wrap #header .left_header .nav li.active {
+  background: #F7C800;
+}
+#wrap #header .left_header .nav li.active a {
+  color: black;
+  font-weight: bold;
+}
+#wrap #content {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#wrap #content .sideNav {
+  position: fixed;
+  top: 45%;
+  right: 1%;
+  z-index: 3;
+}
+#wrap #content .sideNav li {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-top: 10px;
+  cursor: pointer;
+}
+#wrap #content .sideNav li.active {
+  background: black;
+  cursor: default;
+}
+#wrap #content .list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transition: .5s top;
+}
+#wrap #content .list li {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-position: 50% 50%!important;
+  overflow: hidden;
+}
+#wrap #content .list li.home1 {
+  height: 756px;
+  width: 100%;
+  background: url(../img/s1.jpg);
+  overflow: hidden;
+}
+#wrap #content .list li.home1 img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -545px;
+  margin-top: -260px;
+  transition: 1s opacity;
+}
+#wrap #content .list li.home2 {
+  height: 756px;
+  width: 100%;
+  background: url(../img/s2.jpg);
+  overflow: hidden;
+}
+#wrap #content .list li.home2 .left {
+  position: absolute;
+  left: 3%;
+  margin-top: 3%;
+  height: 437px;
+  width: 873px;
+}
+#wrap #content .list li.home2 .left .pics {
+  height: 100%;
+  width: 100% ;
+}
+#wrap #content .list li.home2 .left .pics li {
+  float: left;
+  margin-left: 20px;
+  width: 260px;
+  height: 434px;
+  transition: 1s transform;
+}
+#wrap #content .list li.home2 .left .pics li p {
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0;
+}
+#wrap #content .list li.home2 .left .pics li a {
+  position: relative;
+  width: 98px;
+  height: 36px;
+  left: 80px;
+  background: url(../img/buy.jpg) no-repeat;
+}
+#wrap #content .list li.home2 .right {
+  position: absolute;
+  right: 3%;
+  border-right: 2px solid;
+  padding-right: 10px;
+  text-align: right;
+  top: 10%;
+  transition: 1s transform;
+}
+#wrap #content .list li.home2 .right h1 {
+  font-size: 34px;
+  color: #333;
+  font-weight: 100;
+}
+#wrap #content .list li.home2 .right p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.5em;
+  margin: 20px 0;
+}
+#wrap #content .list li.home2 .right a {
+  color: #333 ;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#wrap #content .list li.home2 .bg {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+}
+#wrap #content .list li.home3 {
+  height: 756px;
+  background: url(../img/s3.jpg) center;
+  overflow: hidden;
+}
+#wrap #content .list li.home3 .left {
+  position: absolute;
+  left: 3%;
+  margin-top: 3%;
+  height: 437px;
+  width: 873px;
+}
+#wrap #content .list li.home3 .left ul li {
+  float: left;
+  margin-left: 20px;
+  width: 260px;
+  height: 434px;
+  transition: 1s transform;
+}
+#wrap #content .list li.home3 .left ul li p {
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0;
+}
+#wrap #content .list li.home3 .left ul li a {
+  position: relative;
+  width: 98px;
+  height: 36px;
+  left: 80px;
+  background: url(../img/buy.jpg) no-repeat;
+}
+#wrap #content .list li.home3 .right {
+  position: absolute;
+  right: 3%;
+  border-right: 2px solid;
+  padding-right: 10px;
+  text-align: right;
+  top: 10%;
+  transition: 1s transform;
+}
+#wrap #content .list li.home3 .right h1 {
+  font-size: 34px;
+  color: #333;
+  font-weight: 100;
+}
+#wrap #content .list li.home3 .right p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.5em;
+  margin: 20px 0;
+}
+#wrap #content .list li.home3 .right a {
+  color: #333 ;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#wrap #content .list li.home3 .bg {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+}
+#wrap #content .list li.home4 {
+  height: 756px;
+  background: url(../img/s4.jpg) center;
+  overflow: hidden;
+}
+#wrap #content .list li.home4 .left {
+  position: absolute;
+  left: 3%;
+  margin-top: 3%;
+  height: 437px;
+  width: 837 px;
+}
+#wrap #content .list li.home4 .left ul li {
+  float: left;
+  margin-left: 20px;
+  width: 310px;
+  height: 434px;
+}
+#wrap #content .list li.home4 .left ul li p {
+  font-size: 18px;
+  text-align: left;
+  margin: 20px 0;
+}
+#wrap #content .list li.home4 .left ul li a {
+  position: relative;
+  width: 98px;
+  height: 36px;
+  background: url(../img/buy.jpg) no-repeat;
+  background-origin: left;
+}
+#wrap #content .list li.home4 .right {
+  position: absolute;
+  right: 3%;
+  border-right: 2px solid;
+  padding-right: 10px;
+  text-align: right;
+  top: 10%;
+}
+#wrap #content .list li.home4 .right h1 {
+  font-size: 34px;
+  color: #333;
+  font-weight: 100;
+}
+#wrap #content .list li.home4 .right p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.5em;
+  margin: 20px 0;
+}
+#wrap #content .list li.home4 .right a {
+  color: #333 ;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#wrap #content .list li.home4 .bg {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+}
+#wrap #content .list li.home5 {
+  height: 756px;
+  background: url(../img/s5.jpg) center;
+  overflow: hidden;
+}
+#wrap #content .list li.home5 .left {
+  position: absolute;
+  left: 3%;
+  margin-top: 3%;
+  height: 437px;
+  width: 837 px;
+}
+#wrap #content .list li.home5 .left ul li {
+  float: left;
+  margin-left: 20px;
+  width: 310px;
+  height: 434px;
+}
+#wrap #content .list li.home5 .left ul li:nth-of-type(1) {
+  width: 259px;
+}
+#wrap #content .list li.home5 .left ul li:nth-of-type(2) {
+  width: 259px;
+}
+#wrap #content .list li.home5 .left ul li p {
+  font-size: 18px;
+  text-align: left;
+  margin: 20px 0;
+}
+#wrap #content .list li.home5 .left ul li a {
+  position: relative;
+  width: 98px;
+  height: 36px;
+  background: url(../img/buy.jpg) no-repeat;
+  background-origin: left;
+}
+#wrap #content .list li.home5 .right {
+  position: absolute;
+  right: 3%;
+  border-right: 2px solid;
+  padding-right: 10px;
+  text-align: right;
+  top: 10%;
+}
+#wrap #content .list li.home5 .right h1 {
+  font-size: 34px;
+  color: #333;
+  font-weight: 100;
+}
+#wrap #content .list li.home5 .right p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.5em;
+  margin: 20px 0;
+}
+#wrap #content .list li.home5 .right a {
+  color: #333 ;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#wrap #content .list li.home5 .bg {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+}
