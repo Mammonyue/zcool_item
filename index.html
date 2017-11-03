@@ -148,28 +148,31 @@
 	</section>
 		
 	</body>
-	<!--<script src="jquery-2.1.3.min.js"></script>-->
 	<script>
 		window.onload=function(){
 			var liNodes =document.querySelectorAll('#wrap #header .left_header .nav >li');
 			var clist = document.querySelector("#wrap #content .list");
 			var cLiNodes =document.querySelectorAll("#wrap  #content .list >li" );
 			var content =document.querySelector('#wrap #content ');
-			
+			var preIndex=0;
 			//侧边导航
 			var sideNavLis =document.querySelectorAll('#wrap #content .sideNav li ');
-			
+			(function(){
+				var contentHeight =document.documentElement.clientHeight - header.offsetHeight;
+				content.style.height =contentHeight+'px';
+			})()
 			
 			//定义出厂动画
 			var outInAn =[
 				{//第一屏
 					out:function(){
 						var img =document.querySelector("#wrap #content .home1 img");
-						img.style.opacity =0;
+						img.style.opacity =1;
 					},
 					in:function(){
-						var img =document.querySelector("#wrap #content .home1 img");
-						img.style.opacity =1;
+						var img =document.querySelector("#wrap #content .home1 img");						
+						
+						img.style.opacity =0;
 					}
 				},
 				{
@@ -191,9 +194,9 @@
 						},1200);
 					},
 					in:function(){
-						var li1 =document.querySelectorAll("#wrap #content .home2 .left .pics ul li")[0];
-						var li2 =document.querySelectorAll("#wrap #content .home2 .left .pics  ul li")[1];
-						var li3 =document.querySelectorAll("#wrap #content .home2 .left .pics ul li")[2];
+						var li1 =document.querySelectorAll("#wrap #content .home2 .left .pics  li")[0];
+						var li2 =document.querySelectorAll("#wrap #content .home2 .left .pics  li")[1];
+						var li3 =document.querySelectorAll("#wrap #content .home2 .left .pics li")[2];
 						var right =document.querySelector("#wrap #content .home2 .right ");
 					
 						setTimeout(function(){
@@ -207,50 +210,141 @@
 							right.style.transform ='translateY(0)'
 						},1200);
 					}
-				},{
+				},
+				{
 					out:function(){
-						var li1 =document.querySelectorAll("#wrap #content .home3 .left .pics ul li")[0];
-						var li2 =document.querySelectorAll("#wrap #content .home3 .left .pics  ul li")[1];
-						var li3 =document.querySelectorAll("#wrap #content .home3 .left .pics  ul li")[2];
+						var li2 =document.querySelector("#wrap #content .home3 .left li:nth-child(2)");
+						var li3 =document.querySelector("#wrap #content .home3 .left li:nth-child(3)");
 						var right =document.querySelector("#wrap #content .home3 .right ");
 						
-						setTimeout(function(){
-							li1.style.transform = "translateX(0)";
-						},800);
-						setTimeout(function(){
-							li2.style.transform = "translateX(-300px)";
-						},1000);
-						setTimeout(function(){
-							li3.style.transform = "translateX(-600px)";
-							right.style.transform ='translateX(300px)'
-						},1200);
-					},
-					in:function(){
-						var li1 =document.querySelectorAll("#wrap #content .home3 .left .pics li")[0];
-						var li2 =document.querySelectorAll("#wrap #content .home3 .left .pics li")[1];
-						var li3 =document.querySelectorAll("#wrap #content .home3 .left .pics li")[2];
-						var right =document.querySelector("#wrap #content .home3 .right ");
 					
 						setTimeout(function(){
-							li1.style.transform = "translateX(0)";
-						},800);
-						setTimeout(function(){
-							li2.style.transform = "translateX(0)";
-						},1000);
+							li2.style.transform = "translateX(-279px)";
+							li3.style.transform = "translateX(-558px)";
+							right.style.transform ='translateX(300px)';
+						},1000)
+					},
+					in:function(){						
+						var li2 =document.querySelector("#wrap #content .home3 .left li:nth-child(2)");
+						var li3 =document.querySelector("#wrap #content .home3 .left li:nth-child(3)");
+						var right =document.querySelector("#wrap #content .home3 .right ");
+											
+				
 						setTimeout(function(){
 							li3.style.transform = "translateX(0)";
-							right.style.transform ='translateX(0)'
-						},1200);
+							li2.style.transform = "translateX(0)";
+							right.style.transform ='translateX(0)';
+						},1000)
+					}
+				},
+				{
+					out:function(){
+						var li1 =document.querySelector("#wrap #content .home4 .left li:nth-child(1)");
+						var li2 =document.querySelector("#wrap #content .home4 .left li:nth-child(2)");
+						var li3 =document.querySelector("#wrap #content .home4 .left li:nth-child(3)");
+						var right =document.querySelector("#wrap #content .home4 .right ");
+						li1.style.display = "initial";
+						li2.style.display = "initial";
+						li3.style.display = "initial";
+						
+						li1.style.animation = "move1 2s 0.8s ";
+						li2.style.animation = "move2 2s 0.8s ";
+						li3.style.animation = "move3 2s 0.8s ";
+						
+						setTimeout(function(){
+							li1.style.transform = "translate(0px,0px)";
+							li2.style.transform = "translate(0px,0px)";
+							li3.style.transform = "translate(0px,0px)";
+							right.style.opacity = 1;
+						},2000)
+						
+					},
+					in:function(){
+						var li1 =document.querySelector("#wrap #content .home4 .left li:nth-child(1)");
+						var li2 =document.querySelector("#wrap #content .home4 .left li:nth-child(2)");
+						var li3 =document.querySelector("#wrap #content .home4 .left li:nth-child(3)");
+						var right =document.querySelector("#wrap #content .home4 .right ");
+															
+						li1.style.display = "none";
+						li2.style.display = "none";
+						li3.style.display = "none";
+						li1.style.transform = "translate(330px,-1000px)";
+						li2.style.transform = "translate(0,-1000px)";
+						li3.style.transform = "translate(-330px,-1000px)";
+						right.style.opacity = 0;
+					}
+			
+				},				
+				{
+					out:function(){
+						var li1 = document.querySelector("#content .list > .home5 .left li:nth-child(1)");
+						var li2 = document.querySelector("#content .list > .home5 .left li:nth-child(2)");
+						var li3 = document.querySelector("#content .list > .home5 .left li:nth-child(3)");
+						var right = document.querySelector("#content .list > .home5 .right");
+						
+						setTimeout(function(){
+							li1.style.transform = "translate3d(-1000px,-800px,-500px) rotateX(145deg) ";
+						},800)
+						setTimeout(function(){
+							li2.style.transform = "translate3d(-1000px,-800px,-500px) rotateX(145deg) ";
+						},1000)
+						setTimeout(function(){
+							li3.style.transform = "translate3d(-1000px,-800px,-500px) rotateX(145deg) ";
+							right.style.opacity = 0;
+						},1200)
+					},
+					in:function(){
+						var li1 = document.querySelector("#content .list > .home5 .left li:nth-child(1)");
+						var li2 = document.querySelector("#content .list > .home5 .left li:nth-child(2)");
+						var li3 = document.querySelector("#content .list > .home5 .left li:nth-child(3)");
+						var right = document.querySelector("#content .list > .home5 .right");
+						
+						
+						
+						setTimeout(function(){
+							li1.style.transform = "translate3d(0,0,0) rotateX(0deg)";
+						},800)
+						setTimeout(function(){
+							li2.style.transform = "translate3d(0,0,0) rotateX(0deg)";
+						},1000)
+						setTimeout(function(){
+							li3.style.transform = "translate3d(0,0,0) rotateX(0deg)";
+							right.style.opacity = 1;
+						},1200)
+						
+						
 					}
 				}
-			
 			]
 			
-			/*outInAn[2]['out']();
-			setTimeout(function(){
-				outInAn[2]['in']();
-			},1000)*/
 			
+			/*outInAn[4]['out']();
+			setTimeout(function(){
+				outInAn[4]['in']();
+			},1000)*/
+			//所有都出场
+			for(var i=0;i<outInAn.length;i++){
+				outInAn[i]["out"]();
+			}
+			contentBind();
+			headNavs();
+			
+			
+			
+			//为了缩放时只显示一屏
+			window.onresize=function(){
+				contentBind();
+				clist.style.top = -now *(document.documentElement.clientHeight - header.offsetHeight)+"px";
+			}
+			
+			//内容区得逻辑
+			function contentBind(){
+				content.style.height = document.documentElement.clientHeight - header.offsetHeight+"px";
+				for(var i=0;i<cLiNodes.length;i++){
+					cLiNodes[i].style.height = document.documentElement.clientHeight - header.offsetHeight+"px";
+					
+				}
+			}
 			
 			
 			
@@ -284,9 +378,7 @@
 				
 				if( (now===0&&flag==="up")   || (now===(cLiNodes.length-1)&&flag==="down") ){
 						return;
-				}
-				
-				
+				}				
 				switch (flag){
 					case "up":
 						if(now>0){
@@ -300,13 +392,11 @@
 						}
 						move(now);
 						break;
-				}
-				
+				}				
 				if(ev.preventDefault){
 					ev.preventDefault();
 				}
-				
-				return false;
+					return false;
 			}
 			
 			
@@ -323,7 +413,7 @@
 					
 				}
 			}
-			
+		
 			function move(index){
 				for(var i=0;i<liNodes.length;i++){
 					liNodes[i].className="";
@@ -334,8 +424,14 @@
 				sideNavLis[index].className="active";
 				//主体内容的同步
 				clist.style.top = -index *(document.documentElement.clientHeight - header.offsetHeight)+"px";
+				//console.log(header.offsetHeight)  变量没定义就就可以获取
+				
+				outInAn[index]["in"]();
+				outInAn[preIndex]["out"]();
+				preIndex = index;
 			}
 			
+		
 		
 		}
 			
